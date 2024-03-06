@@ -1,19 +1,21 @@
-using Commands;
 using Signals;
 using Zenject;
 
-namespace Core
+namespace Core.SignalCore
 {
-    public class SignalCore : MonoInstaller<SignalCore>
+    /// <summary>
+    /// this class only responsible to declare signals
+    /// </summary>
+    public class BoardSignals : Installer<BoardSignals>
     {
         // ReSharper disable Unity.PerformanceAnalysis
         public override void InstallBindings()
         {
             SignalBusInstaller.Install(Container);
+
             Container.DeclareSignal<GameStartedSignal>().RequireSubscriber();
-            Container.DeclareSignal<ClickExpired>().RequireSubscriber();
-            Container.BindInterfacesAndSelfTo<EventTest>().AsTransient();
-            
+            Container.DeclareSignal<ClickExpired>();
+
         }
     }
 }
