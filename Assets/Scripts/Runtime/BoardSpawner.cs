@@ -12,11 +12,10 @@ namespace Runtime
         [Inject] private BuildBoard buildOn;
         [SerializeField] private BoardData _boardData;
 
-
         private void OnEnable()
         {
-            signalBus.Subscribe<Signals.GameStartedSignal>(OnGameStarted);
-            signalBus.Subscribe<Signals.ClickExpired>(Onclicktt);
+            signalBus.Subscribe<GameStartedSignal>(OnGameStarted);
+            signalBus.Subscribe<ClickExpired>(Onclicktt);
         }
 
         private void Onclicktt(ClickExpired obj)
@@ -28,14 +27,14 @@ namespace Runtime
         }
 
 
-        private void OnGameStarted()
+        public void OnGameStarted()
         {
-            buildOn.CreatBoard(_boardData, this.transform);
+            buildOn.CreatBoard(_boardData, transform);
         }
 
         private void OnDisable()
         {
-            signalBus.TryUnsubscribe<Signals.GameStartedSignal>(OnGameStarted);
+            signalBus.TryUnsubscribe<GameStartedSignal>(OnGameStarted);
         }
 
 
