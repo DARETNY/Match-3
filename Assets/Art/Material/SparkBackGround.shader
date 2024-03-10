@@ -8,6 +8,7 @@ Shader "Hidden/Test"
         _sparkleColor("Sparkle Color", Color) = (1, 1, 1, 1)
         _sparkleIntensity("Sparkle Intensity", Range(0, 1)) = 0.5
         _sparkleFrequency("Sparkle Frequency", Range(0, 1)) = 0.5
+
     }
     SubShader
     {
@@ -55,9 +56,9 @@ Shader "Hidden/Test"
 
             fixed4 applySparkleEffect(fixed4 col, float2 uv)
             {
-                float2 sparklePos = float2(rand(uv.x + _Time * .5f), rand(uv.y + _Time * .5f));
+                float2 sparkle_pos = float2(rand(uv.x + _Time * .5f), rand(uv.y + _Time * .5f));
                 float sparkleBrightness = rand(uv.x + uv.y + _Time * .5f) * _sparkleIntensity;
-                float dist = distance(uv, sparklePos);
+                float dist = distance(uv, sparkle_pos);
                 float freq = rand(uv + _Time * .5f);
                 float mask = step(dist, _sparkleSize) * step(freq, _sparkleFrequency);
                 col.rgb += _sparkleColor.rgb * sparkleBrightness * mask;

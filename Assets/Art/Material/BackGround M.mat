@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sapmle x
-  m_Shader: {fileID: 4800000, guid: e260cfa7296ee7642b167f1eb5be5023, type: 3}
+  m_Name: BackGround M
+  m_Shader: {fileID: 4800000, guid: 27fd4d021f0984e2caeb7217fd162db9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ca9462b98a6db42d1b45d62e28a3c150, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -39,11 +39,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SparkleTex:
+        m_Texture: {fileID: 2800000, guid: 0148bb20ef418df4db0e34e1fa1f3860, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _sparkleTex:
+        m_Texture: {fileID: 2800000, guid: 6fc44e63aec750346b529018ba87846e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
+    - _sparkleFrequency: 0.242
+    - _sparkleIntensity: 1
+    - _sparkleSize: 0.0831
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _rand: {r: 1, g: 5, b: 0.6, a: 0}
+    - _sparkleColor: {r: 0.15392663, g: 0.9433962, b: 0, a: 1}
   m_BuildTextureStacks: []
