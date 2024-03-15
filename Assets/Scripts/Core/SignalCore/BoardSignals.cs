@@ -13,7 +13,7 @@ namespace Core.SignalCore
         {
             SignalBusInstaller.Install(Container);
 
-            Container.DeclareSignal<GameStartedSignal>().RequireSubscriber();
+            Container.DeclareSignal<GameStartedSignal>();
             Container.DeclareSignal<ClickExpired>();
 
         }

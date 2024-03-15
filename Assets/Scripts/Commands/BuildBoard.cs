@@ -35,6 +35,19 @@ namespace Commands
             ApplyCamera(data);
         }
 
+        public void ClearAllBoard(Transform parent)
+        {
+            if (!Isplaying)
+                return;
+
+            for (var i = 0; i < parent.childCount; i++)
+            {
+                Object.Destroy(parent.GetChild(i).gameObject);
+            }
+
+            Isplaying = false;
+        }
+       
 
         private void ApplyCamera(BoardData data)
         {

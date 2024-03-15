@@ -34,7 +34,7 @@ namespace Runtime
 
         private void OnDisable()
         {
-            signalBus.TryUnsubscribe<GameStartedSignal>(OnGameStarted);
+            signalBus.Unsubscribe<GameStartedSignal>(OnGameStarted);
         }
 
 
@@ -43,6 +43,11 @@ namespace Runtime
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 signalBus.TryFire<GameStartedSignal>();
+            }
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                buildOn.ClearAllBoard(this.transform);
             }
 
             if (Input.GetMouseButtonDown(0))
